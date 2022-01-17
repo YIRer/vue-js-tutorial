@@ -8,6 +8,14 @@ const app = Vue.createApp({
       confirmName: "",
     };
   },
+  computed: {
+    fullName() {
+      if (this.name === "") {
+        return "";
+      }
+      return this.name + " " + "Max";
+    },
+  },
   methods: {
     increaseCounter(num) {
       this.counter = this.counter + num;
@@ -23,6 +31,10 @@ const app = Vue.createApp({
     },
     setConfirmName() {
       this.confirmName = this.name;
+    },
+    resetInput() {
+      this.name = "";
+      this.confirmName = "";
     },
   },
 });
